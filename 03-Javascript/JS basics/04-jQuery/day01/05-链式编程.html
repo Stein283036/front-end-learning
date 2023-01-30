@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05-链式编程</title>
+    <style>
+      body {
+        padding: 0 30px 40px;
+      }
+
+      p {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 测试用 输入框 -->
+    <input type="text" class="text" />
+
+    <script src="../jquery-3.5.1.js"></script>
+
+    <script>
+      // 为 input 标签添加多个事件
+      // 因为.focus .blur 这样的方法返回值依然是 jQ 对象
+      $(".text")
+        .focus(function () {
+          console.log("focus");
+        })
+        .blur(function () {
+          console.log("blur");
+        })
+        .change(function () {
+          console.log("change");
+        });
+    </script>
+  </body>
+</html>

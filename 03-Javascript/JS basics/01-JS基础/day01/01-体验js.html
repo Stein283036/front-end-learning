@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-体验js</title>
+    <style>
+      .pink {
+        background-color: pink;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- JS是什么?
+        是一种运行在客户端（浏览器）的脚本语言，实现人机交互效果, 用来实现用户和网页的交互行为
+     -->
+
+    <!-- JS做什么?
+        01-事件监听,监听用户的行为进行合适的处理,常见的是按钮的点击事件
+        02-表单校验,针对用户的输入信息作出合理的检查
+        03-数据交互,发送ajax请求获取后端数据,渲染到页面中
+        04-服务端编程 node.js
+     -->
+
+    <!-- JS的组成部分?
+        ECMAScript:
+        规定了js基础语法核心知识。
+        比如：变量、分支语句、循环语句、对象等等
+
+        Web APIs :
+        DOM(Document Object Model) 文档对象模型 操作文档，比如对页面元素进行移动、大小、添加删除等操作
+        BOM(Browser Object Model) 浏览器对象模型 操作浏览器，比如页面弹窗，检测窗口宽度、存储数据到浏览器等等
+     -->
+
+    <!-- 点击切换按钮的案例-体验HTML+CSS+JS 实现交互效果 -->
+    <button class="pink">按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+
+    <script>
+      //  通过dom获得所有的button元素 - querySelectorAll
+      let btns = document.querySelectorAll("button");
+      // 遍历每一个button元素,为它们添加监听的点击事件
+      for (let index = 0; index < btns.length; index++) {
+        btns[index].addEventListener("click", function () {
+          document.querySelector(".pink").className = "";
+          // this指的就是HTMLButtonElement
+          this.className = "pink";
+        });
+      }
+    </script>
+  </body>
+</html>

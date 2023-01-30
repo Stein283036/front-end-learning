@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>输入和输出语法</title>
+  </head>
+  <body>
+    <!-- JS输入和输出语法
+        输出和输入也可理解为人和计算机的交互，用户通过键盘、鼠标等向计算机输入信息，
+        计算机处理后再展示结果给用户，这便是一次输入和输出的过程
+
+        输出
+        01-向body内写入内容
+        document.write();
+        02-页面弹出警告对话框
+        alert();
+        03-控制台显示调试信息(程序员调试使用)
+        consolo.log();
+
+        输入
+        01-对话框提示输入
+        prompt();
+     -->
+
+    <script>
+      document.write("我喜欢何晶雯");
+      document.write("<h1>我喜欢何晶雯</h1>");
+
+      alert("alert");
+
+      console.log("debug");
+
+      let ret = prompt(
+        "this is a message that prompts you to input some words!"
+      );
+      alert(ret);
+    </script>
+  </body>
+</html>

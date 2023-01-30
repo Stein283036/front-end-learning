@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08-变量命名规则与规范</title>
+  </head>
+  <body>
+    <!-- JS变量命名规则与规范
+        规则：必须遵守，不遵守报错
+        规范：建议，不遵守不会报错，但不符合业内通识
+        01-规则
+        不能使用关键字或者保留字
+        只能使用下划线,字母,数字,$,但不能以数字开头
+        字母严格区分大小写
+        02-规范
+        起名要见名知意
+        遵守小驼峰命名法
+
+        let 和 var 区别
+        let 为了解决 var 的一些问题
+        var声明变量存在的问题:
+        01-可以先使用在声明(不合理)
+        02-var 声明过的变量可以重复声明(不合理)
+        03-块级提升,作用域等问题
+        
+        以后声明变量统一使用 let, 行业规范
+     -->
+
+    <script>
+      {
+        // var声明的变量没有作用域问题
+        var varScope = "varScope";
+      }
+
+      {
+        // let声明的变量只在当前{}作用域生效
+        let letScope = "letScope";
+      }
+      alert(varScope);
+      alert(letScope);
+    </script>
+  </body>
+</html>

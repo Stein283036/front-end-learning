@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>继承性</title>
+    <style>
+      div {
+        color: red;
+        font-size: 30px;
+        /* height属性子元素无法继承 */
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- css的继承性
+        特性：子元素有默认继承父元素样式的特点(子承父业)
+        可以继承的常见属性(只有文字控制属性可以继承)
+        1. color
+        2. font系列: font-style、font-weight、font-size、font-family
+        3. text-indent、text-align
+        4. line-height
+        5. ……
+        注意点：
+        • 可以通过调试工具判断样式是否可以继承
+     -->
+
+    <div>
+      这是div标签里面的文字
+      <span>这是div里面的span</span>
+    </div>
+  </body>
+</html>

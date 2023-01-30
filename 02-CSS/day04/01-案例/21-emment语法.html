@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emment语法</title>
+    <style>
+        /* css的Emment语法,样式单词的首字母 */
+        /* 具体的值(比如像素,大小)直接跟在缩写后面即可 */
+        .box {
+            /* 盒子模型的Emment语法: w200+h200+bgc */
+            width: 200px;
+            height: 200px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <!-- 标签元素的Emment语法
+        交集选择器: p.red#one
+        子代选择器: ul>li*数字
+        内部文本: ul>li*数字{内部文本}
+        同级(兄弟)选择器: div+p
+     -->
+     <p class="red" id="one">
+         交集选择器的Emment语法
+     </p>
+
+     <ul>
+         <li>子代选择器的Emment语法</li>
+         <li>子代选择器的Emment语法</li>
+     </ul>
+
+     <ul>
+         <li>内部文本</li>
+         <li>内部文本</li>
+     </ul>
+
+     <div>同级选择器</div>
+     <p>同级选择器</p>
+</body>
+</html>

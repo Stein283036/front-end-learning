@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-for循环练习</title>
+  </head>
+  <body>
+    <script>
+      // 求1-100之间所有的偶数和
+      let sum = 0;
+      for (let i = 1; i <= 100; i++) {
+        sum += i;
+      }
+      alert(`1-100之间的和为${sum}`);
+
+      // 页面中打印5个小星星 ◇◇◇◇◇
+      for (let i = 1; i <= 5; i++) {
+        document.write("◇<br>");
+      }
+
+      // 循环的最大价值就是遍历数组
+      let users = ["马超", "赵云", "张飞", "关羽", "黄忠", "pink老师"];
+      for (let index = 0; index < users.length; index++) {
+        const user = users[index];
+        document.write(`${users[index]}<br>`);
+      }
+
+      // for循环和while循环的最佳实践
+      // 当循环次数确定时使用for循环
+      // 当循环需要满足某一条件退出,且与次数无关的时候使用while循环
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15-事件进阶</title>
+    <style>
+      body {
+        padding: 0 30px 40px;
+      }
+
+      p {
+        color: #333;
+      }
+      button {
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>jQuery 中封装了更为灵活的 on/off、one 方法处理 DOM 事件</p>
+    <!-- 测试标签 -->
+    <input type="text" class="onoff" />
+    <br />
+    <button class="one">支付</button>
+
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script>
+      // 注册事件 on
+      $(".onoff").on("focus", function () {
+        // this 是 dom元素
+        console.log(this);
+        console.log("focus 事件");
+      });
+      $(".onoff").on("blur", function () {
+        // this 是 dom元素
+        console.log(this);
+        console.log("blur 事件");
+      });
+      // input 事件在文本框内容变化时就会触发,而 change 事件在文本框失去焦点才会触发
+      $(".onoff").on("input", function () {
+        console.log("input 事件");
+      });
+
+      // 移除事件
+      $(".onoff").off("focus");
+      $(".onoff").off();
+
+      // 一次性事件 - 事件只触发一次
+      $(".one").one("click", function () {
+        console.log("一次性事件");
+        alert("成功支付99元");
+      });
+    </script>
+  </body>
+</html>

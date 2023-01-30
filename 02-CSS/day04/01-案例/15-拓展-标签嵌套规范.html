@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>15-拓展-标签嵌套规范</title>
+    <style></style>
+  </head>
+  <body>
+    <!-- HTML嵌套规范注意点
+        块级元素一般作为大容器，可以嵌套：文本、块级元素、行内元素、行内块元素等等……
+        但是：p标签中不要嵌套div、p、h等块级元素,从语义的角度,一行要么应该是段落,要么应该是标题
+        a标签内部可以嵌套任意元素
+        ➢ 但是：a标签不能嵌套a标签
+     -->
+
+     <!-- 利用Chrome的调试工具调试观察错误 -->
+     <p>
+         <h1>p标签中不要嵌套h1标题元素</h1>
+     </p>
+
+     <p>
+         <div>p标签中不要嵌套div</div>
+     </p>
+  </body>
+</html>

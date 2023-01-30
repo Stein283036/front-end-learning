@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>09-样式操纵</title>
+    <style>
+      .box {
+        width: 400px;
+        height: 4000px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>css可以获取及设置元素样式,设置的是行内样式</p>
+    <!-- <div class="box" style="background-color: pink; width: 200px; height: 200px; border: 1px solid red;"></div> -->
+    <!-- 测试用的盒子 -->
+    <div class="box"></div>
+
+    <script src="../jquery-3.5.1.min.js"></script>
+
+    <script>
+      // 键值对方式设置 一条样式
+      $(".box").css("backgroundColor", "pink");
+
+      // 对象{}设置的方式设置 多条样式
+      $(".box").css({
+        // 单位不写默认 px
+        width: "200px",
+        height: "200px",
+        border: "1px solid red",
+      });
+
+      // 获取 dom 元素样式
+      const boxWidth = $(".box").css("width");
+      const boxBorder = $(".box").css("border");
+      console.log(boxWidth);
+      console.log(boxBorder);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-jQuery对象</title>
+  </head>
+  <body>
+    <p>jQuery 中利用选择器获取到的并非原生的 DOM对象，而是 jQuery 对象</p>
+
+    <h4>将原生 DOM 对象转换成 jQuery 对象后，便可以调用其实例中的方法了。</h4>
+    <ul>
+      <li>html</li>
+      <li>css</li>
+      <li>javascript</li>
+      <li>jQuery</li>
+    </ul>
+
+    <script src="../jquery-3.5.1.js"></script>
+
+    <script>
+      /* jQuery 中利用选择器获取到的并非原生的 DOM 对象，而是 jQuery 对象，所以上一节我们在学习jQ选择器的时候，
+      调用$方法获取到的返回值就是jQuery对象，jQuery提供的绝大多数方法都需要通过jQuery对象才可以访问 */
+      //
+      let p1 = document.querySelector("p");
+      // jQuery 对象建议机上前缀$
+      let $p2 = $("p");
+      console.log(p1);
+      console.log($p2);
+
+      let $lis = $("li");
+      $lis.css("backgroundColor", "pink");
+
+      // dom 对象转 jQ对象
+      let $p3 = $(p1); // A DOM element to wrap in a jQuery object.
+      $p3.css("fontSize", "30px");
+    </script>
+  </body>
+</html>

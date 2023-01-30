@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css基础</title>
+    <style>
+      /* css常见属性
+            color: 文字颜色
+            font-size: 文字大小
+            background-color: 背景颜色
+            width: 宽度
+            height: 高度
+            css语法规则: 选择器 { 属性名1: 属性值1; 属性名2: 属性值2; }
+
+            css引入的三种方式:
+            ①行内式:在开始标签的style属性中添加样式
+            ②内嵌式:在head标签中添加style标签添加样式
+            ③外链式:通过link标签引入
+        */
+
+      /* css基础选择器
+            ①标签选择器
+            标签选择器选择的是一类标签，而不是单独某一个
+            标签选择器无论嵌套关系有多深，都能找到对应的标签
+            
+            ②id选择器
+            所有标签上都有id属性
+            id属性值类似于身份证号码，在一个页面中是唯一的，不可重复的！
+            一个标签上只能有一个id属性值
+            一个id选择器只能选中一个标签
+
+            ③类选择器
+            所有标签上都有class属性，class属性的属性值称为类名（类似于名字）
+            类名可以由数字、字母、下划线、中划线组成，但不能以数字或者中划线开头
+            一个标签可以同时有多个类名，类名之间以空格隔开
+            类名可以重复，一个类选择器可以同时选中多个标签
+
+            ④通配符选择器
+            开发中使用极少，只会在极特殊情况下才会用到
+            在基础班小页面中可能会用于去除标签默认的margin和padding（后续讲解）
+
+            实际开发的情况
+            类选择器用的最多
+            id一般配合js使用，除非特殊情况，否则不要使用id设置样式
+            实际开发中会遇到冗余代码的抽取 （可以将一些公共的代码抽取到一个公共的类中去）
+       */
+
+      /* 标签选择器 */
+      p {
+        color: brown;
+        font-size: 16px;
+        background-color: beige;
+        width: 300px;
+        height: 200px;
+        background-image: url();
+        border: 1px;
+      }
+
+      /* id选择器 */
+      #two {
+        color: darkseagreen;
+      }
+
+      /* 类选择器 */
+      .one {
+        color: royalblue;
+      }
+
+      /* 通配符选择器 */
+      * {
+        padding: 0;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p>我爱编程,我爱学习</p>
+
+    <div class="one">类选择器</div>
+
+    <div id="two">id选择器</div>
+  </body>
+</html>

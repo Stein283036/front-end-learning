@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>继承性的应用</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+
+      body {
+        font-size: 16px;
+      }
+
+      div {
+        color: red;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 继承性的应用
+        好处：可以在一定程度上减少代码
+        常见应用场景：
+        1. 可以直接给ul设置 list-style:none 属性，从而去除列表默认的小圆点样式
+        2. 直接给body标签设置统一的font-size和color，从而统一不同浏览器默认文字大小以及颜色
+
+        继承失效的特殊情况
+        如果元素有浏览器默认样式，此时继承性依然存在，但是优先显示浏览器的默认样式
+        比如a标签有浏览器默认样式,文本颜色,h标题有浏览器默认的字体大小样式
+     -->
+
+    <ul>
+      <li>编程</li>
+      <li>足球</li>
+    </ul>
+
+    <div>
+      <a href="#">a标签有浏览器默认的文本颜色样式</a>
+      <h1>h标题有浏览器默认的字体大小样式</h1>
+    </div>
+  </body>
+</html>

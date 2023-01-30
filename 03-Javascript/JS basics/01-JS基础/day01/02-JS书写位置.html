@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-JS书写位置</title>
+  </head>
+
+  <body>
+    <!-- JS书写位置
+        01-内部JS(学习环境下使用)
+        直接写在html文件中,用script标签包裹
+        规范：script标签写在</body>上面
+
+        02-外部JS(生产环境下使用)
+        将JS代码写在.js文件中,再通过script标签引入
+
+        03-内联JS(几乎不用)
+        JS代码内嵌在标签内部 - vue阶段使用
+     -->
+
+    <!-- 注意事项
+        我们将 <script> 放在HTML文件的底部附近的原因是浏览器会按照代码在文件中的顺序加载 HTML。
+        如果先加载的 JavaScript 期望修改其下方的 HTML，那么它可能由于 HTML 尚未被加载而失效。
+        因此，将 JavaScript 代码放在 HTML页面的底部附近通常是最好的策略。
+     -->
+
+    <!-- 这里只演示内联JS加深印象 -->
+    <button onclick="alert('月薪过万!!!')">点击我月薪过万</button>
+  </body>
+</html>

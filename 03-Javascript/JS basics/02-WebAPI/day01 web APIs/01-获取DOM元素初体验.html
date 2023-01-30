@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-获取DOM元素</title>
+  </head>
+  <body>
+    <button>点击我,获取红包</button>
+
+    <script>
+      // 根据CSS选择器来获取DOM元素 (重点)
+      // document: 文档对象,用来操作整个html文档内容
+      let btn = document.querySelector("button");
+
+      console.dir(btn);
+
+      btn.addEventListener("click", () => {
+        btn.innerHTML = "你被骗了";
+      });
+      // 其他获取DOM元素方法（了解）
+    </script>
+  </body>
+</html>

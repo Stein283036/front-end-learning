@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>后代选择器</title>
+    <style>
+      div p {
+        color: rebeccapurple;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 复合选择器
+        后代选择器
+        作用：根据 HTML 标签的嵌套关系，选择父元素 后代中 满足条件的元素
+        选择器语法：选择器1 选择器2 { 属性: 属性值; }
+        注意点：
+        1. 后代包括：儿子、孙子、重孙子……
+        2. 后代选择器中，选择器与选择器之前通过 空格 隔开
+     -->
+    <p>这是一个p标签</p>
+    <!-- 后代选择器 -->
+    <div>
+      <p>div的后代p标签</p>
+    </div>
+
+    <div>
+      <div>
+        <p>两层div标签后的p</p>
+      </div>
+    </div>
+
+    
+      
+      
+      
+    
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>背景平铺</title>
+    <style>
+      .div1 {
+        width: 400px;
+        height: 400px;
+        background-color: pink;
+        background-image: url(./images/bg2.png);
+        background-repeat: no-repeat;
+      }
+
+      .div2 {
+        width: 400px;
+        height: 400px;
+        background-color: pink;
+        background-image: url(./images/bg2.png);
+        background-repeat: repeat-x;
+      }
+    </style>
+  </head>
+  <body>
+    <!--  背景平铺
+        属性名：background-repeat(br)
+        属性值:
+        repeat: 水平和垂直方向都平铺(默认值)
+        no-repeat: 不平铺
+        repeat-x: 水平方向平铺
+        repeat-y: 垂直方向平铺
+     -->
+
+    <div class="div1"></div>
+    <div class="div2"></div>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-编程思想-排他思想</title>
+    <style>
+      .yellow {
+        border-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="yellow">第1个</button>
+    <button class="yellow">第2个</button>
+    <button class="yellow">第3个</button>
+    <button class="yellow">第4个</button>
+    <button class="yellow">第5个</button>
+
+    <script>
+      let btns = document.querySelectorAll("button");
+
+      for (let i = 0; i < btns.length; i++) {
+        btns[i].addEventListener("click", () => {
+          // clear all
+          btns.forEach((btn) => {
+            btn.classList.remove("yellow");
+          });
+
+          // only me
+          btns[i].classList.add("yellow");
+        });
+      }
+    </script>
+  </body>
+</html>

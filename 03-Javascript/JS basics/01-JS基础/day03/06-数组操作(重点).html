@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06-数组操作</title>
+  </head>
+  <body>
+    <script>
+      let arr = ["stein", "tommy", "hannibal", "eva", "james", "jane"];
+      // 查 - 通过数组下标(索引)访问元素
+      console.log(arr[0]);
+
+      // 增 - 重点记push
+      // arr.push(); 参数是一个可变长参数类型 返回值是新的数组长度
+      // arr.unshift() 参数是Elements to insert at the start of the array. 返回值是数组的新长度,参数是一个可变长数组
+      console.log(arr.push("倪京龙", "何静雯"));
+      // arr.unshift()
+      console.log(arr);
+
+      // 改 - 通过索引取元素重新赋值
+      arr[0] = "STEIN";
+      console.log(arr[0]);
+
+      // 删 - 重点记splice
+      // arr.pop(): string 返回的是被删除的元素值,删除的是数组最后一个元素
+      // splice(start: number, deleteCount?: number): string[] 返回值是被删除的元素列表
+      // arr.shift(): string 删除的是数组第一个元素,返回被删除的元素
+      let ret1 = arr.pop();
+      console.log(ret1);
+      let ret2 = arr.splice(0, 3);
+      console.log(ret2);
+      let ret3 = arr.shift();
+      console.log(ret3);
+    </script>
+  </body>
+</html>

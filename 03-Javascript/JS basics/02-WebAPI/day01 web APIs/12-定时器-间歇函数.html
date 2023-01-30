@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12-定时器-间歇函数</title>
+  </head>
+  <body>
+    <script>
+      // 网页中经常会需要一种功能：每隔一段时间需要自动执行一段代码，不需要我们手动去触发
+      // 例如：网页中的倒计时
+      // 要实现这种需求，需要定时器函数
+
+      // 开启定时器 setInterval(handler: TimerHandler, timeout?: number, ...arguments: any[])
+      // 间隔时间是毫秒,定时器返回的是一个id数字,表示定时器的任务编号
+
+      function handler() {
+        console.log("测试定时器的函数!!!");
+      }
+      // 开启定时器
+      let handlerId = setInterval(handler, 1000);
+      // 关闭定时器 clearInterval(id?: number): void
+      // 一般不会刚创建就停止，而是满足一定条件再停止
+      clearInterval(handlerId);
+    </script>
+  </body>
+</html>

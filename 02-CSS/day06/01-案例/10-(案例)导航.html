@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10-(案例)导航</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .nav {
+        margin: 50px auto;
+        width: 640px;
+        height: 50px;
+        background-color: #ffc0cb;
+      }
+
+      .nav li {
+        float: left;
+      }
+
+      .nav li a {
+        /* a标签是行内元素,所以需要转换成块级元素,这里li设置了左浮动,所以inline-block或者block都可以 */
+        display: inline-block;
+        /* display: block; */
+        width: 80px;
+        height: 50px;
+        /* 文字水平居中 */
+        text-align: center;
+        /* 文字垂直居中 */
+        line-height: 50px;
+        /* Chrome默认的字体大小就是16px */
+        /* font-size: 16px; */
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .nav li a:hover {
+        background-color: #008000;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 书写网页导航步骤:
+        清除默认的margin和padding
+        找到ul，去除小圆点
+        找到li标签，设置浮动让li一行中显示
+        找到a标签，设置宽高 → a标签默认是行内元素，默认不能设置宽高
+        方法一：给a标签设置 display : inline-block
+        方法二：给a标签设置 display : block
+        方法三：给a设置 float : left -->
+    <div class="nav">
+      <ul>
+        <li><a href="#">新闻1</a></li>
+        <li><a href="#">新闻2</a></li>
+        <li><a href="#">新闻3</a></li>
+        <li><a href="#">新闻4</a></li>
+        <li><a href="#">新闻5</a></li>
+        <li><a href="#">新闻6</a></li>
+        <li><a href="#">新闻7</a></li>
+        <li><a href="#">新闻8</a></li>
+      </ul>
+    </div>
+  </body>
+</html>

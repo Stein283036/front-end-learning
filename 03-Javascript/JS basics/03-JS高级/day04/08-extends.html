@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 在继承的过程中子类中 constructor 中必须调 super 函数，否则会有语法错误,如果写才需要调用父类的构造函数,否则不需要
+      class Person {
+        // 构造函数
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        // 父类的属性
+        legs = 2;
+        arms = 2;
+
+        walk() {
+          console.log("人类都会走路...");
+        }
+      }
+
+      // 子类 English 继承了父类 Person
+      class English extends Person {
+        // 子类的构造函数
+        constructor(name, age) {
+          // Uncaught ReferenceError ReferenceError: Must call super constructor in derived class before accessing 'this' or returning from derived constructor
+          super(name, age);
+        }
+
+        // 子类的属性
+        skin = "white";
+        language = "英文";
+      }
+
+      // 实例化
+      let e1 = new English("jack", 18);
+      console.log(e1.name);
+      console.log(e1);
+
+      // ECMAScript 6 中基于类的面向对象相较于构造函数和原型对象的面向对象本质上是一样的，基于类的语法更为简洁，未来的 JavaScript 中也都会是基于类的语法实现，当前阶段先熟悉基于类的语法，后面课程中会加强基于类语法的实践
+    </script>
+  </body>
+</html>

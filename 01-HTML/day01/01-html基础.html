@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 排版标签 -->
+    <!-- 标题标签:h1->h6 -->
+    <!-- 段落标签:p -->
+    <!-- 换行标签:br -->
+    <!-- 水平线标签:hr -->
+
+    <!-- 文本格式化标签 -->
+    <!-- 场景:需要让文字加粗、下划线、倾斜、删除线等效果 -->
+    <!-- 
+      加粗标签: strong
+      下划线标签: ins
+      倾斜标签: em
+      删除标签: del
+     -->
+    <div>
+      <strong>加粗标签</strong>
+      <ins>下划线标签</ins>
+      <em>倾斜标签</em>
+      <del>删除标签</del>
+    </div>
+    <!-- 
+      媒体标签
+      图片标签:img
+        属性:src(图片路径)* alt(图片打不开时的替换文本)* title width height
+      音频标签:audio
+        属性:src(音频路径)* controls(显示播放的控件) autoplay(自动播放,部分浏览器不支持) loop(循环播放)
+        音频标签目前支持三种格式：MP3,Wav,Ogg
+      视频标签:video
+        属性:src(视频路径)* controls(显示播放的控件) autoplay(自动播放,部分浏览器不支持) loop(循环播放)
+        视频标签目前支持三种格式：MP4,WebM,Ogg
+      链接标签:a
+        属性: hrep(跳转的页面或者url或者#)* target(页面打开的方式): _blank(在新的窗口打开),_self(默认,在当前窗口打开)
+        链接标签的显示特点(了解)
+        a标签默认文字有下划线
+        a标签从未点击过，默认文字显示蓝色
+        a标签点击过之后，文字显示为紫色（清除浏览器历史记录可恢复蓝色）
+     -->
+    <!-- ./快捷键,会提示当前目录下的所有目录文件 
+      ./:当前目录
+      ../:上一级目录
+    -->
+    <img src="./images/map.jpg" alt="地图" />
+    <audio src="./images/music.mp3" controls loop></audio>
+    <video src="./images/video.mp4" controls loop></video>
+    <a href="https://www.baidu.com" target="_self">去往百度</a>
+    <a href="target.html" target="_blank">去往目标页面</a>
+    <!-- 开发中不确定页面的最终跳转位置,使用#占个位置,点击之后回到网页顶部,将来填充 -->
+    <a href="#" target="_self">跳转到网页顶部</a>
+  </body>
+</html>

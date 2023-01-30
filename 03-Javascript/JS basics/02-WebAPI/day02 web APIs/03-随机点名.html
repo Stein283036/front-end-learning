@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-随机点名</title>
+    <style>
+      div {
+        width: 200px;
+        height: 40px;
+        border: 1px solid pink;
+        text-align: center;
+        line-height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>开始抽奖吧</div>
+    <button>点击点名</button>
+
+    <script>
+      // 需求：点击按钮之后，随机显示一个名字，如果没有显示则禁用按钮
+      let arr = ["刘备", "曹操", "pink老师"];
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+      let btn = document.querySelector("button");
+      let box = document.querySelector("div");
+
+      btn.addEventListener("click", () => {
+        let random = getRandom(0, arr.length - 1);
+        box.innerText = arr[random];
+        arr.splice(random, 1);
+        if (arr.length === 0) {
+          btn.innerText = "已经抽完";
+          btn.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>

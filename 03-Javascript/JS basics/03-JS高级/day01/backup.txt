@@ -1,0 +1,190 @@
+<template>
+  <van-form>
+    <vue-esign
+      class="signatureBoard"
+      ref="esign"
+      :width="signatureBoardWidth"
+      :height="signatureBoardHeight"
+      :isCrop="isCrop"
+      :lineWidth="lineWidth"
+      :lineColor="lineColor"
+      :bgColor.sync="bgColor"
+    />
+
+    <div class="btns">
+      <van-button
+        class="resetBtn"
+        round
+        block
+        type="primary"
+        size="normal"
+        @click="handleReset"
+      >
+        清空面板
+      </van-button>
+
+      <van-button
+        class="submitBtn"
+        round
+        block
+        type="primary"
+        size="normal"
+        @click="submitSignature"
+      >
+        提交签名
+      </van-button>
+    </div>
+  </van-form>
+</template>
+
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
+import axios from "axios";
+
+import vueEsign from "vue-esign";
+Vue.use(vueEsign);
+
+import { Form } from "vant";
+import { Field, Button } from "vant";
+
+@Component({
+  components: {
+    [Form.name]: Form,
+    [Field.name]: Field,
+    [Button.name]: Button,
+  },
+})
+export default class promiseSignaturePage extends Vue {
+  // 控制手写签名组件的相关变量
+  private lineWidth = 3;
+  private lineColor = "#000000";
+  // private bgColor = "rgba(0,0,0,.6)";
+  private bgColor = "";
+  private resultImg = "";
+  private isCrop = false;
+  private signatureBoardWidth = window.innerWidth;
+  private signatureBoardHeight = window.innerHeight;
+
+  // 签名文件
+  private signatureFile: FormData = new FormData();
+
+  /**
+   * handleReset: 清空面板
+   */
+  public handleReset() {
+    this.$refs["esign"].reset();
+  }
+
+  /**
+   * handleGenerate: 生成签名图片
+   */
+  public async handleGenerate() {
+    this.$refs["esign"]
+      .generate()
+      .then((res: any) => {
+        this.resultImg = res; // 得到了签字生成的base64图片
+        // console.log(this.resultImg);
+        // 生成文件名称
+        this.signatureFile.append(
+          "signatureFile",
+          this.base64ImgtoFile(this.resultImg)
+        );
+      })
+      .catch((err: Error) => {
+        //  没有签名，点击生成图片时调用
+        this.$toast.fail({
+          message: "未签名！",
+        });
+        // alert(err); // 画布没有签字时会执行这里 'Not Signned'
+      });
+  }
+
+  /**
+   * base64ImgtoFile: base64编码转文件
+   * @returns: 转码之后的File对象
+   */
+  public base64ImgtoFile(dataurl: string, filename = "file"): File {
+    const arr = dataurl.split(",");
+
+    const mime = arr[0].match(/:(.*?);/)[1];
+
+    const suffix = mime.split("/")[1];
+
+    const bstr = atob(arr[1]);
+
+    let n = bstr.length;
+
+    const u8arr = new Uint8Array(n);
+
+    while (n--) {
+      u8arr[n] = bstr.charCodeAt(n);
+    }
+
+    return new File([u8arr], `${filename}.${suffix}`, {
+      type: mime,
+    });
+  }
+
+  /**
+   * submitRegister: 提交签名
+   */
+  public async submitSignature() {
+    // console.log("debug");
+    await this.handleGenerate();
+    console.log(this.signatureFile);
+
+    let userId = this.$route.query.userId;
+    console.log(userId);
+
+    // 在这里发送axios请求上传签名文件
+    let url = "http://localhost:8080/wevue/promise/signature?userId=" + userId;
+    axios
+      .post(url, this.signatureFile, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      })
+      .then((response) => {
+        console.log(response);
+        if (response.data.success) {
+          this.$toast.success("签名提交成功");
+          this.$router.push({
+            path: "/promiseList",
+          });
+        } else {
+          this.$toast.fail("服务器内部错");
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+}
+</script>
+
+<style>
+.signatureBoard {
+  border: 2px solid gray;
+}
+
+.btns {
+  display: block;
+  margin-top: 30px;
+  height: 200px;
+}
+
+.btns .resetBtn {
+  /* margin-left: 100px; */
+  /* float: left; */
+  height: 60px;
+}
+
+.btns .submitBtn {
+  margin-right: 100px;
+  margin-top: 30px;
+  /* float: right; */
+  /* width: 100px; */
+  height: 60px;
+}
+</style>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-事件监听</title>
+  </head>
+  <body>
+    <button>点击我</button>
+
+    <script>
+      // 事件是用户在浏览器和网页的交互行为,比如点击按钮,鼠标经过,......
+      // 事件监听就是监听用户的这些事件,并做出处理
+      // 语法: addEventListener("事件", listener)
+      // 事件监听三要素: 事件源(被监听的元素+监听事件名称+监听器(处理函数))
+      let btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        alert("月薪过万不是梦");
+      });
+
+      btn.addEventListener("mouseover", () => {
+        alert("鼠标经过");
+      });
+    </script>
+  </body>
+</html>

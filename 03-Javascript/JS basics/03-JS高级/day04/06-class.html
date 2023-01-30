@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // class
+      /*
+      传统面向对象的编程序语言都是【类】的概念，对象都是由类创建出来，然而早期 JavaScript 中是没有类的，面向对象大多都是基于构造函数和原型实现的，
+      但是 ECMAScript 6  规范开始增加了【类】相关的语法，使得 JavaScript 中的面向对象实现方式更加标准。
+      妈的,早早学这个不就完了么,搞什么原型对象,什么构造函数,根本就不符合面向对象编程的思想,这里明显是JS的开发者们想到了这一问题
+      */
+
+      // class（类）是 ECMAScript 6 中新增的关键字，专门用于创建类的，类可被用于实现逻辑的封装
+      class Person {
+        static nation = "China";
+
+        static greet = function () {
+          console.log(this.nation);
+        };
+
+        // A class may only have one constructor
+        constructor(name, age) {
+          this.name = name;
+          this.age = age;
+        }
+
+        playTennis = function () {
+          console.log("play tennis");
+        };
+      }
+
+      let p1 = new Person("stein", 22);
+      console.log(p1);
+      // 静态变量和静态方法直接通过类名访问
+      Person.greet();
+      p1.playTennis();
+    </script>
+  </body>
+</html>

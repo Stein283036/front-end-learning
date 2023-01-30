@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // extends 是 ECMAScript 6 中实现继承的简洁语法
+      class Person {
+        // 父类的属性
+        legs = 2;
+        arms = 2;
+        eyes = 2;
+        // 父类的方法
+        walk() {
+          console.log("人类都会走路...");
+        }
+        // 父类的方法
+        sleep() {
+          console.log("人都得要睡觉...");
+        }
+      }
+
+      // Chinese 继承了 Person 的所有特征
+      class Chinese extends Person {}
+
+      let stein = new Chinese();
+      console.log(stein);
+      stein.walk();
+      stein.sleep();
+    </script>
+  </body>
+</html>

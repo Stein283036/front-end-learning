@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-分支语句</title>
+  </head>
+  <body>
+    <!-- 分之语句
+        01-if分支
+        ①单分支 if
+        ②双分支 if else
+        ③多分支 if else if else
+        小括号内的结果若不是布尔类型时，会发生隐式转换转为布尔类型
+        02-switch分支
+        03-三元表达式
+     -->
+
+    <script>
+      // if分支
+      let input = parseInt(prompt("你的高考成绩: "));
+      if (input > 700) {
+        alert("考入清华");
+      }
+
+      if (NaN) {
+        console.log("NaN会隐式转换为false");
+      }
+
+      // 三元表达式
+      let num1 = parseInt(prompt("请输入第一个数: "));
+      let num2 = parseInt(prompt("请输入第二个数: "));
+      let maxValue = num1 > num2 ? num1 : num2;
+      console.log(maxValue);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08-自定义动画</title>
+    <style>
+      body {
+        padding: 0 30px;
+        width: 2000px;
+        height: 2000px;
+      }
+
+      .container {
+        width: 200px;
+        height: 200px;
+        background-color: skyblue;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .box {
+        width: 100px;
+        height: 100px;
+        background-color: yellowgreen;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="box"></div>
+    </div>
+
+    <button class="custom">自定义动画</button>
+
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script>
+      $(".custom").click(function () {
+        $(".box").animate(
+          {
+            width: 150,
+            height: 150,
+            marginLeft: 10,
+          },
+          5000
+        );
+
+        $("html").animate(
+          {
+            scrollTop: 200,
+            scrollLeft: 200,
+          },
+          3000
+        );
+      });
+    </script>
+  </body>
+</html>

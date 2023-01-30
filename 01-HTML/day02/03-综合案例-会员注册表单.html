@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>会员注册表单</title>
+</head>
+
+<body>
+    <h1>青春不常在,抓紧谈恋爱</h1>
+    <hr />
+    <form action="#" method="post">
+        <p>
+            昵称:
+            <label for="nickname">
+                <input type="text" name="nickname" id="nickname" />
+            </label>
+        </p>
+
+        <p>
+            性别:
+            <label for="gender">
+                <input type="radio" name="gender" id="gender" />男
+                <input type="radio" name="gender" id="gender" />女
+            </label>
+        </p>
+
+        所在城市:
+        <p>
+            <label for="address">
+                <select name="address" id="address">
+                    <option value="shanghai">上海</option>
+                    <option value="beijing">北京</option>
+                    <option value="shenzhen">深圳</option>
+                </select>
+            </label>
+        </p>
+
+        喜欢的类型:
+        <p>
+            <label for="interests">
+                <input type="checkbox" name="interests" value="keai" id="interests" checked />可爱
+                <input type="checkbox" name="interests" value="xinggan" id="interests" checked />性感
+                <input type="checkbox" name="interests" value="yujie" id="interests" />御姐
+                <input type="checkbox" name="interests" value="luoli" id="interests" />萝莉
+            </label>
+        </p>
+
+        个人介绍:
+        <p>
+            <label for="introduction">
+                <textarea name="introduction" id="introduction" cols="30" rows="10"></textarea>
+            </label>
+        </p>
+
+        <h3>我承诺</h3>
+        <ul>
+            <li>年满18岁,单身</li>
+            <li>抱着严谨的态度</li>
+            <li>真诚寻找另一半</li>
+        </ul>
+
+        <p>
+            <label for="item">
+                我同意所有条款:
+                <input type="checkbox" name="item" value="on" id="item" />
+            </label>
+        </p>
+
+        <p>
+            <input type="submit" value="免费注册" />
+            <input type="reset" value="重置" />
+        </p>
+        </label>
+    </form>
+</body>
+
+</html>

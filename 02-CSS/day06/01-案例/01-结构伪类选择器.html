@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01-结构伪类选择器</title>
+    <style>
+        /* 选中ul的第一个li子标签 */
+        ul > li:first-child {
+            color: red;
+        }
+
+        /* 选中ul的最后一个li子标签 */
+        ul > li:last-child {
+            color: blue;
+        }
+
+        /* 通过数字选中ul的任意一个li子标签 */
+        /* 重点记住这个就可以 */
+        ul > li:nth-child(4) {
+            color: yellow;
+        }
+
+        /* 通过数字选中ul的倒数的li子标签 */
+        ul > li:nth-last-child(2) {
+            color: pink;
+        }
+    </style>
+</head>
+<body>
+    <!-- 结构伪类选择器
+        作用：根据元素在HTML中的结构关系查找元素
+        优势：减少对于HTML中类的依赖，有利于保持代码整洁
+        场景：常用于查找某父级选择器中的子元素
+     -->
+     <ul>
+         <li>这是第1个li</li>
+         <li>这是第2个li</li>
+         <li>这是第3个li</li>
+         <li>这是第4个li</li>
+         <li>这是第5个li</li>
+         <li>这是第6个li</li>
+         <li>这是第7个li</li>
+         <li>这是第8个li</li>
+     </ul>
+</body>
+</html>

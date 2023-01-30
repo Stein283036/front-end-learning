@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10-属性操纵</title>
+  </head>
+  <body>
+    <p>使用jQuery提供的方法操纵元素的属性</p>
+    <!-- 测试标签 -->
+    <a href="#">京东</a>
+    <img src="" />
+
+    <script src="../jquery-3.5.1.min.js"></script>
+
+    <script>
+      // 通过 attr 方法设置元素的属性
+      $("a").attr("href", "https://jd.com");
+      $("img").attr("src", "./07-计数器/img/图片1.gif");
+
+      // 通过 attr 方法获取元素的属性
+      const href = $("a").attr("href");
+      const src = $("img").attr("src");
+      console.log(href);
+      console.log(src);
+
+      // 通过 removeAttr 方法删除元素的属性
+      $("a").removeAttr("href");
+      $("img").removeAttr("src");
+    </script>
+  </body>
+</html>

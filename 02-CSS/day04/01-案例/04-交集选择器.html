@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>交集选择器</title>
+    <style>
+      /* 找到即是p标签且还有box类属性值的元素 */
+      p.box {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 交集选择器(*)
+        作用：选中页面中同时满足多个选择器的标签1
+        选择器语法：选择器1选择器2 { 属性: 属性值; }
+        (既又原则)找到页面中 既 能被选择器1选中，又能被选择器2选中的标签，设置样式
+        注意点：
+        1. 交集选择器中的选择器之间是紧挨着的，没有东西分隔
+        2. 交集选择器中如果有标签选择器，标签选择器必须写在最前面
+     -->
+    <p class="box">这是类属性为box的p标签</p>
+    <p>这是p标签</p>
+    <div class="box">这是类属性为box的div标签</div>
+  </body>
+</html>

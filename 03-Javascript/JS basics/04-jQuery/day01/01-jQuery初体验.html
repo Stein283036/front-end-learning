@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-jQuery</title>
+  </head>
+  <body>
+    <ul>
+      <li>西兰花</li>
+      <li>西红柿</li>
+      <li>西瓜</li>
+      <li>西葫芦</li>
+    </ul>
+    <script src="../jquery-3.5.1.js"></script>
+    <script>
+      // jQuery 是JavaScript类库,封装了JS原生的大量 DOM 等操作,简化了JS编程还处理了不同浏览器之间的兼容，极大的提升了编码的效率，其口号是 Write Less Do More!
+
+      // 分别使用dom语法和jQuery的方法来实现一个相同的需求，看看代码量有什么差别.需求这样的:
+      // 为所有的li绑定 点击事件 , 点击时修改背景色为 粉色
+
+      // 原生的 dom 语法
+      // document.querySelectorAll("li").forEach((li) => {
+      //   li.addEventListener("click", function () {
+      //     this.style.backgroundColor = "pink";
+      //   });
+      // });
+
+      // 使用jQuery语法
+      $("li").click(function () {
+        // $(this)指的就是事件源 HTMLElement
+        $(this).css("backgroundColor", "orange");
+      });
+    </script>
+  </body>
+</html>

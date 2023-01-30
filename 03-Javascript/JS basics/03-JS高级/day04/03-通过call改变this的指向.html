@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // call
+      // 使用 call 方法调用函数，同时指定函数中 this 的值
+      function sayHi() {
+        console.log(this);
+      }
+
+      let user = {
+        name: "小明",
+        age: 18,
+      };
+
+      let student = {
+        name: "小红",
+        age: 16,
+      };
+
+      // 调用函数,并改变this的指向
+      // call(thisArg: any, ...argArray: any[]): any
+      sayHi.call(user);
+
+      function counter(x, y) {
+        console.log(this);
+        return x + y;
+      }
+
+      let sum = counter.call(null, 10, 20);
+      console.log(sum);
+    </script>
+  </body>
+</html>

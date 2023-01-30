@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-随机点名</title>
+    <style>
+      div {
+        display: inline-block;
+        width: 150px;
+        height: 30px;
+        border: 1px solid pink;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    抽中的选手：
+    <div></div>
+
+    <script>
+      let arr = [
+        "赵云",
+        "黄忠",
+        "关羽",
+        "张飞",
+        "马超",
+        "刘备",
+        "曹操",
+        "pink老师",
+      ];
+
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // 生成一个随机数
+      let random = getRandom(0, arr.length - 1);
+      // 获取div元素
+      let div = document.querySelector("div");
+      div.innerText = arr[random];
+      // 然后从数组中删除这个选手
+      console.log(arr.splice(random, 1));
+    </script>
+  </body>
+</html>

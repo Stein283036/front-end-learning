@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>04-事件绑定</title>
+  </head>
+  <style>
+    body {
+      padding: 0 30px 40px;
+    }
+
+    p {
+      color: #333;
+    }
+
+    .box {
+      width: 200px;
+      height: 100px;
+      background-color: yellowgreen;
+      margin: 10px 10px 10px 0;
+    }
+    input {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <p>在 jQuery 中以原生事件类型的名称为依据 , 封装了相对应的事件处理方法</p>
+    <ul>
+      <li>瓦林卡</li>
+      <li>费德勒</li>
+      <li>德约科维奇</li>
+      <li>纳达尔</li>
+      <li>蒂姆</li>
+    </ul>
+    <input type="text" class="text" />
+    <div class="box"></div>
+
+    <script src="../jquery-3.5.1.js"></script>
+
+    <script>
+      // 在 jQuery 中以原生事件类型的名称为依据 , 封装了相对应的事件处理方法
+      // 先通过选择器找到希望绑定的元素，然后然后调用对应的事件名方法，传入回调函数，逻辑直接写在回调函数里面即可
+
+      // click 事件
+      $("li").click(function () {
+        // 这个 this 是 dom 对象
+        console.log(this);
+        // dom 对象 转 jQ 对象
+        let $this = $(this);
+        console.log($this);
+        $this.css("backgroundColor", "pink");
+        console.log("click");
+      });
+
+      // focus 获得焦点事件
+      $(".text").focus(function () {
+        console.log("focus");
+        $(this).css("backgroundColor", "pink");
+      });
+
+      // blur 失去焦点事件
+      $(".text").blur(function () {
+        console.log("blur");
+        $(this).css("backgroundColor", "white");
+      });
+
+      // mouseenter 鼠标移入事件
+      $(".box").mouseenter(function () {
+        console.log("mouseenter");
+        $(this).css({
+          width: "400px",
+          height: "200px",
+        });
+      });
+
+      // mouseleave 鼠标移出事件
+      $(".box").mouseleave(function () {
+        console.log("mouseleave");
+        $(this).css({
+          width: "200px",
+          height: "100px",
+        });
+      });
+    </script>
+  </body>
+</html>

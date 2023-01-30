@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 普通函数中this的指向: 谁调用函数 this 指向谁
+      function func1() {
+        console.log(this);
+      }
+
+      func1();
+      // func1() 等价于 window.func1()
+      window.func1();
+
+      const func2 = function () {
+        console.log(this);
+      };
+
+      let user = {
+        name: "stein",
+        age: 22,
+      };
+
+      user.fn1 = func1;
+      user.fn2 = func2;
+
+      user.fn1(); // {name: 'stein', age: 22, fn1: ƒ, fn2: ƒ}
+      user.fn2(); // {name: 'stein', age: 22, fn1: ƒ, fn2: ƒ}
+    </script>
+  </body>
+</html>

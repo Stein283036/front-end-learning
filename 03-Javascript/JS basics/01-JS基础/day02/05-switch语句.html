@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>05-switch语句</title>
+  </head>
+  <body>
+    <!-- switch分支语句
+        switch case语句一般用于等值判断,不适合于区间判断
+        switch case一般需要配合break关键字使用 没有break会造成case穿透
+     -->
+
+    <script>
+      let choice = prompt("请输入你的选择: ");
+      switch (choice) {
+        case "A":
+          document.write(`你的选择是A`);
+          break;
+        case "B":
+          document.write(`你的选择是B`);
+          break;
+        case "C":
+          document.write(`你的选择是C`);
+          break;
+        default:
+          document.write(`我不知道你的选择`);
+          break;
+      }
+    </script>
+  </body>
+</html>

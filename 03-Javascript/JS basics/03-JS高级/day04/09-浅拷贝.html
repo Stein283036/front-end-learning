@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 浅拷贝 - 对于引用数据类型来说,只拷贝地址
+      let obj = {
+        uname: "张三丰",
+        age: 22,
+        sex: "男",
+        color: ["red", "blue", "yellow", "pink"],
+        message: {
+          index: 1,
+          score: 99,
+        },
+      };
+
+      let shallowCopy1 = obj;
+      let shallowCopy2 = {};
+      console.log(obj === shallowCopy1);
+      console.log(obj, shallowCopy1);
+
+      obj.uname = "stein";
+      console.log(shallowCopy1.uname); // stein
+
+      Object.assign(shallowCopy2, obj);
+      console.log(shallowCopy2.uname);
+
+      // 深拷贝等用到再说吧,只要知道浅拷贝和深拷贝之间的区别就好了,深拷贝就是对值进行拷贝,而浅拷贝只是拷贝地址引用
+    </script>
+  </body>
+</html>

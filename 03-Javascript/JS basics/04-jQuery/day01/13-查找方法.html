@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>13-查找方法</title>
+    <style>
+      body {
+        padding: 0 30px;
+      }
+
+      p {
+        color: #333;
+      }
+      ul {
+        border: 1px solid #000;
+      }
+    </style>
+  </head>
+  <body>
+    <p>jQuery 中封装了查找元素的方法，可以基于元素的结构关系查找新的元素</p>
+    <!-- 测试用标签 -->
+    <div class="container">
+      <h4>课程列表</h4>
+      <ul class="course">
+        <li>html</li>
+        <li>css</li>
+        <li>javascript</li>
+      </ul>
+      <h4>校区列表</h4>
+      <ul class="campus">
+        <li class="bj">北京校区</li>
+        <li class="sh">上海校区</li>
+        <li class="gz">广州校区</li>
+        <li class="sz">深圳校区</li>
+      </ul>
+    </div>
+
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script>
+      // parent:获取父级元素
+      $(".course").parent().css("backgroundColor", "pink");
+
+      // children:获取子元素
+      $(".course").children().css("backgroundColor", "red");
+      $(".campus").children(".bj").css("color", "blue");
+
+      // siblings:获取兄弟元素(不包含自己)
+      $(".bj").siblings().css("fontSize", "30px");
+      $(".bj").siblings(".sz").css("fontStyle", "italic");
+
+      // find:获取后代元素(必须传入选择器)
+      $(".container").find("h4").css("color", "blue");
+      $(".container").find("li").css("borderBottom", "1px solid");
+    </script>
+  </body>
+</html>

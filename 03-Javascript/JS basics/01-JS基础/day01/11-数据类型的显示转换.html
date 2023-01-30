@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-数据类型的显示转换</title>
+  </head>
+  <body>
+    <!-- 数据类型的显示转换
+        转换为number
+        Number(value)
+        如果字符串内容里有非数字，转换失败时结果为 NaN（Not a Number）即不是一个数字
+        NaN也是number类型的数据，代表非数字
+        parseInt(string)
+        parseFloat(string)
+
+        转换为string
+        String(value)
+        toString()
+     -->
+
+    <script>
+      let str1 = "283036";
+      let num1 = Number(str1);
+      console.log(num1);
+      let num2 = parseInt(str1);
+      console.log(num2);
+      let str2 = "283.036";
+      let num3 = parseFloat(str2);
+      console.log(num3);
+
+      let str3 = String(num1);
+      console.log(str3);
+      let str4 = num2.toString();
+      console.log(str4);
+    </script>
+  </body>
+</html>

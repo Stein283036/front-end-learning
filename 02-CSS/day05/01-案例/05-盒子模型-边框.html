@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>盒子模型-边框</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        /* 四个方向统一设置 */
+        border: 1px solid rgb(40, 55, 143);
+        /* 单个方向设置 */
+        border-bottom: 5px dashed yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 盒子模型 - 边框
+        作用：给盒子设置边框粗细、边框样式、边框颜色效果
+        设置border会撑大盒子！
+        解决：当盒子被border撑大后，如何满足需求？
+        计算多余大小，手动在内容中减去
+        快捷键bd
+     -->
+    <div>盒子模型-边框</div>
+  </body>
+</html>

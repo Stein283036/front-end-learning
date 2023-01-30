@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>01-运算符</title>
+  </head>
+  <body>
+    <!-- JS运算符
+        01-算术运算符
+        02-比较运算符
+
+        开发中，请使用 === 比较变量值是否相等
+
+        NaN不等于任何值，包括它本身
+        尽量不要比较小数，因为小数有精度问题
+        03-赋值运算符
+        04-逻辑运算符 && || !
+
+        有5个值是false: false 0 '' undefined null
+        
+        05-一元运算符
+        06-三元表达式
+        07-运算符的优先级(不用关心,用()即可)
+
+        注: JavaScript 的运算符可以根据所需表达式的个数，分为一元运算符、二元运算符、三元运算符
+     -->
+
+    <script>
+      // 一元运算符
+      let num1 = 1;
+      num1++;
+      console.log(num1);
+      // 赋值运算符
+      num1 += 2;
+      console.log(num1);
+
+      // 后置自增
+      let num2 = num1++ + 1;
+      console.log(num2);
+      // 前置自增
+      let num3 = ++num1 + 1;
+      console.log(num3);
+
+      // 三元表达式
+      let flag = num3 > 10 ? true : false;
+      console.log(flag);
+
+      // 思考?
+      let i = 1;
+      console.log(i++ + ++i + i);
+    </script>
+  </body>
+</html>

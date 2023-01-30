@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-对象的基本使用</title>
+  </head>
+  <body>
+    <script>
+      // 对象由属性和方法组成, 属性和属性值之间使用:分隔,多个属性/方法之间使用,分隔
+
+      // 声明对象
+      let good = {
+        name: "小米10青春版",
+        id: "1000012816024",
+        weight: "0.55kg",
+        address: "中国大陆",
+      };
+
+      let user = {
+        name: "stein",
+        age: 22,
+        hobbies: ["tennis", "cs-go", "programming"],
+        playTennis: function () {
+          console.log("play tennis");
+        },
+        playCSGO: function () {
+          console.log("play cs-go");
+        },
+      };
+      console.log(good);
+
+      // 访问对象的属性或者方法,通过对象名.或者[]访问属性,只能通过.访问对象的方法
+      // 点后面的属性名一定不要加引号,[] 里面的属性名一定加引号,不同的场景会用到不同的写法
+      console.log(user.name);
+      console.log(user["age"]);
+      console.log(user.hobbies[1]);
+      user.playCSGO();
+      user.playTennis();
+    </script>
+  </body>
+</html>

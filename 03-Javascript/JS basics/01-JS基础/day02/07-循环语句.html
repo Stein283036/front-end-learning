@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>07-循环语句</title>
+  </head>
+  <body>
+    <!-- 断点调试
+        作用：学习时可以帮助更好的理解代码运行，工作时可以更快找到bug
+        浏览器打开调试界面
+
+        下面的步骤是不是麻烦了？直接使用VSCode内置的调试工具不舒服么？嗯？
+
+        1. 按F12打开开发者工具
+        2. 点到sources一栏
+        3. 选择代码文件
+        断点：在某句代码上加的标记就叫断点，当程序执行到这句有标记的代码时会暂停下来
+     -->
+
+    <script>
+      // while循环
+      let i = 1;
+      while (i <= 5) {
+        document.write("我爱你5次<br>");
+        i++;
+      }
+
+      // 计算从1加到100的和
+      let sum = 0;
+      let j = 1;
+      while (j <= 100) {
+        sum += j;
+        j++;
+      }
+      document.write(`1加到100的和为${sum}`);
+
+      // 计算1-100之间的所有偶数和
+      let total = 0;
+      let k = 1;
+      while (k <= 100) {
+        if (k % 2 === 0) {
+          total += k;
+        }
+        k++;
+      }
+      document.write(`1-100之间的所有偶数和为${total}`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06-随机图片案例</title>
+    <style>
+      img {
+        width: 500px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="./images/1.webp" alt="" />
+
+    <script>
+      // 获取img元素
+      let img = document.querySelector("img");
+
+      function getRandom(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
+
+      // 随机得到图片序号
+      let random = getRandom(1, 6);
+      img.src = `./images/${random}.webp`;
+    </script>
+  </body>
+</html>

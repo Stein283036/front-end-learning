@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>03-修改元素内容</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div>粉红色的回忆</div>
+
+    <script>
+      // 修改DOM元素的内容方式:
+      // 01-document.write():只能将文本内容追加到 </body> 前面的位置,文本中包含的标签会被解析
+      // 02-元素innerText 属性,将文本内容添加/更新到任意标签位置,文本中包含的标签不会被解析
+      // 03-元素.innerHTML 属性,将文本内容添加/更新到任意标签位置,文本中包含的标签会被解析
+      
+      let box = document.querySelector("div");
+      //   box.innerText = "<strong>淡淡的悲伤</strong>";
+      box.innerHTML = "<strong>淡淡的悲伤</strong>";
+    </script>
+  </body>
+</html>

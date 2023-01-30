@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>08-过滤方法</title>
+  </head>
+  <body>
+    <h3>过滤方法</h3>
+    <p>对获取到的元素进行过滤,返回的依旧是jQuery对象</p>
+    <ul>
+      <li>html</li>
+      <li>css</li>
+      <li>javascript</li>
+    </ul>
+
+    <script src="../jquery-3.5.1.min.js"></script>
+
+    <script>
+      $("li")
+        .first()
+        .click(function () {
+          console.log("我是第一个 li");
+        });
+      $("li")
+        .last()
+        .click(function () {
+          console.log("我是第三个(最后一个) li");
+        });
+      $("li")
+        .eq(1)
+        .click(function () {
+          // this 是 dom元素
+          console.log(this);
+          console.log("我是第二个 li");
+        });
+    </script>
+  </body>
+</html>

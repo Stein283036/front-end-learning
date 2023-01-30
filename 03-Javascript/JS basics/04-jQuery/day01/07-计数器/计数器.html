@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>计数器</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <!-- 计数器功能区域 -->
+      <div class="input-num">
+        <!-- 减号 -->
+        <button>-</button>
+        <!-- 内容 -->
+        <span>0</span>
+        <!-- 加号 -->
+        <button>+</button>
+      </div>
+
+      <img src="http://www.itheima.com/images/logo.png" alt="" />
+    </div>
+
+    <script src="../../jquery-3.5.1.js"></script>
+
+    <script>
+      // 第一个 - 按钮绑定点击事件 - 回想结构伪类选择器
+      $(".input-num button:first-child").click(function () {
+        console.log("sub click");
+        let num = $(".input-num span").text();
+        if (num > 0) {
+          $(".input-num span").text(--num);
+        } else {
+          alert("最小为0,欧巴");
+        }
+      });
+
+      // 第二个 + 按钮绑定点击事件
+      $(".input-num button:last-child").click(function () {
+        console.log("add click");
+        let num = $(".input-num span").text();
+        if (num < 10) {
+          $(".input-num span").text(++num);
+        } else {
+          alert("最大为10,欧巴");
+        }
+      });
+    </script>
+  </body>
+</html>

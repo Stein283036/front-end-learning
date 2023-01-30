@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10-JS的基本数据类型</title>
+  </head>
+  <body>
+    <!-- 计算机程序可以处理大量的数据，为什么要给数据分类？
+      01-充分利用内存空间,根据数据类型的不同所分配的内存空间也不同
+      02-更加方便程序员根据需求定义不同的数据类型的变量
+
+      JS数据类型
+      01-基本数据类型
+      ①number(JS中的正数/负数/小数统一为数字类型)
+      ②string(通过单引号（ ''） 、双引号（ ""）或反引号( `` )包裹的数据都叫字符串，单引号和双引号没有本质上的区别，
+      推荐使用单引号)
+      模板字符串 ``
+      作用: 拼接字符串和变量
+      ③boolean(true false)
+      ④undefined
+      什么情况出现未定义类型？
+      只声明变量，不赋值的情况下，变量的默认值为 undefined，一般很少【直接】为某个变量赋值为undefined
+      工作中的使用场景：
+      我们开发中经常声明一个变量，等待传送过来的数据。
+      如果我们不知道这个数据是否传递过来，此时我们可以通过检测这个变量是不是undefined，就判断用户是否
+      有数据传递过来
+      ⑤null
+      null 开发中的使用场景：
+      官方解释：把 null 作为尚未创建的对象
+      大白话： 将来有个变量里面存放的是一个对象，但是对象还没创建好，可以先给个null
+      null和undefined的区别:
+      ①undefined表示没有定义,即变量没有赋值
+      ②变量赋值了,但是值为空
+
+      02-引用数据类型
+      object
+      array
+      function
+
+      注意事项: JS中的数据类型是弱类型,即变量只有赋值之后才能确定类型
+     -->
+
+    <script>
+      let name = "stein";
+      let age = 22;
+      //  模板字符串
+      console.log(`my name is ${name}, i\' am ${age} years old!`);
+
+      // 一个变量只声明而未定义,那么它的值默认就是undefined
+      let address;
+      console.log(address);
+
+      // 一个变量存放的是对象,那么可以先初始化为null
+      let user = null;
+      console.log(user);
+
+      console.log(typeof 283036.36);
+      console.log(typeof 'stein');
+      console.log(typeof new Date());
+      console.log(typeof true);
+      console.log(typeof address);
+      console.log(typeof user);
+
+      // 控制台语句经常用于测试结果来使用
+      // 可以看出数字型和布尔型颜色为蓝色，字符串和undefined颜色为灰色
+    </script>
+  </body>
+</html>

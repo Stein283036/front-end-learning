@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>并集选择器</title>
+    <style>
+      p,
+      div,
+      h1,
+      /* 复合选择器 */
+      div .one,
+      span {
+        color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 并集选择器
+        作用：同时选择多组标签，设置相同的样式
+        选择器语法：选择器1 ， 选择器2 { 属性: 属性值; }
+        注意点：
+        1. 并集选择器中的每组选择器之间通过 , 分隔
+        2. 并集选择器中的每组选择器可以是基础选择器或者复合选择器
+        3. 并集选择器中的每组选择器通常一行写一个，提高代码的可读性
+     -->
+    <p>p标签</p>
+    <div>div标签</div>
+    <h1>h1标签</h1>
+    <span>span标签</span>
+    <div>
+      <div class="one">div>div.one</div>
+    </div>
+  </body>
+</html>

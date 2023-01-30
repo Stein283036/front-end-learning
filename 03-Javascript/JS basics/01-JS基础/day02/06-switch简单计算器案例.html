@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>06-switch简单计算器案例</title>
+  </head>
+  <body>
+    <script>
+      // 需求：用户输入2个数字，然后输入 + - * / 任何一个，可以计算结果
+      let num1 = parseInt(prompt("请输入第一个参与运算的数: "));
+      let num2 = parseInt(prompt("请输入第二个参与运算的数: "));
+      let operator = prompt("请输入运算符: ");
+
+      switch (operator) {
+        case "+":
+          document.write(`结果是: ${num1} + ${num2} = ${num1 + num2}`);
+          break;
+        case "-":
+          document.write(`结果是: ${num1} - ${num2} = ${num1 - num2}`);
+          break;
+        case "*":
+          document.write(`结果是: ${num1} * ${num2} = ${num1 * num2}`);
+          break;
+        case "/":
+          document.write(`结果是: ${num1} / ${num2} = ${num1 / num2}`);
+          break;
+        default:
+          document.write("输入错误");
+          break;
+      }
+    </script>
+  </body>
+</html>

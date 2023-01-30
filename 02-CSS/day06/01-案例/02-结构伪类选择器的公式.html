@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-结构伪类选择器的公式</title>
+    <style>
+      /* 匹配ul的顺序为偶数的li子标签,even或者2n或4n等 */
+      ul > li:nth-child(even) {
+        color: red;
+      }
+
+      /* 匹配ul的顺序为奇数的li子标签,odd或者2n+1,根据需求变化n */
+      ul > li:nth-child(odd) {
+        color: blue;
+      }
+
+      /* 匹配ul的前五个li子标签 */
+      ul > li:nth-child(-n + 5) {
+        font-size: 30px;
+      }
+
+      /* 匹配ul的第三个li子标签往后 */
+      ul > li:nth-child(n + 3) {
+          font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>这是第1个li</li>
+      <li>这是第2个li</li>
+      <li>这是第3个li</li>
+      <li>这是第4个li</li>
+      <li>这是第5个li</li>
+      <li>这是第6个li</li>
+      <li>这是第7个li</li>
+      <li>这是第8个li</li>
+    </ul>
+  </body>
+</html>

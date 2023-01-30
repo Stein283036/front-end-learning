@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02-通过CSS选择器获取DOM元素(重点)</title>
+  </head>
+  <body>
+    <div>我是第一个盒子</div>
+    <div>我是第二个盒子</div>
+    <div class="three">我是第三个盒子</div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+    </ul>
+    <span>就1个</span>
+
+    <script>
+      // document.querySelector("css选择器"): 选择匹配的第一个元素,返回CSS选择器匹配的
+      // 第一个元素,一个 HTMLElement对象,如果没有匹配到,返回null
+      let div1 = document.querySelector("div");
+      let div3 = document.querySelector(".three");
+      let li3 = document.querySelector("ul li:last-child");
+      console.log(div1);
+      console.log(div3);
+      console.log(li3);
+
+      // document.querySelectorAll("css选择器"): 选择匹配到的多个元素,返回CSS选择器匹配的
+      // NodeList 对象集合,得到的是一个伪数组,有长度和索引,但是没有pop,push等操作数组的方法,
+      
+      let liNodeList = document.querySelectorAll("ul li");
+      console.log(liNodeList);
+      // 通过遍历的方式，获得里面的每一个dom元素
+      for (let i = 0; i < liNodeList.length; i++) {
+        console.log(liNodeList[i]);
+      }
+
+      // 即使只有一个元素，通过querySelectAll() 获取过来的也是一个伪数组，里面只有一个元素而已
+      let spanNodeList = document.querySelectorAll("span");
+      console.log(spanNodeList);
+    </script>
+  </body>
+</html>

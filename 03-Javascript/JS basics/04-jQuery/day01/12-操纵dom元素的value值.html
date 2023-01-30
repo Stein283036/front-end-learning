@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>12-操纵dom元素的value值</title>
+  </head>
+  <body>
+    <p>jQuery 中封装了操纵value属性的方法，可以取值和赋值</p>
+    <!-- 测试用输入框 -->
+    <input class="text" type="text" />
+
+    <script src="../jquery-3.5.1.min.js"></script>
+    <script>
+      // 赋值
+      $(".text").val("tommy");
+
+      // 取值
+      $(".text").blur(function () {
+        console.log($(".text").val());
+      });
+    </script>
+  </body>
+</html>

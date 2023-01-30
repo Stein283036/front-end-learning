@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css特性-优先级</title>
+    <style>
+      /* 通配符选择器 */
+      body {
+        color: red;
+      }
+
+      /* 标签选择器 */
+      div {
+        color: blue !important;
+      }
+
+      /* 类选择器 */
+      .css1 {
+        color: green;
+      }
+
+      /* id选择器 */
+      #css2 {
+        color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- css特性 - 优先级
+      优先级的比较:
+      继承 < 通配符选择器 < 标签选择器 < 类选择器 < id选择器 < 行内样式 < !important
+
+      注意点：
+      1. !important写在属性值的后面，分号的前面！
+      2. !important不能提升继承的优先级，只要是继承优先级最低！
+      3. 实际开发中不建议使用 !important 
+     -->
+
+    <!-- 行内样式 -->
+    <div class="css1" id="css2" style="color: wheat">文字的颜色是什么呢?</div>
+  </body>
+</html>

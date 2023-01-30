@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>11-表单的属性设置</title>
+  </head>
+  <body>
+    <input type="text" value="请输入" />
+    <button disabled>按钮</button>
+    <input type="checkbox" name="" id="" class="agree" />
+
+    <script>
+      // 表单很多情况，也需要修改属性，比如点击眼睛，可以看到密码，本质是把表单类型转换为文本框
+      // 1.修改表单控件的值
+      let input1 = document.querySelector("input");
+      input1.value = "小米手机";
+      input1.type = "password";
+
+      // 2.启用按钮
+      let btn = document.querySelector("button");
+      btn.disabled = false;
+
+      // 3.勾选复选框
+      let input2 = document.querySelector(".agree");
+      input2.checked = true;
+    </script>
+  </body>
+</html>
