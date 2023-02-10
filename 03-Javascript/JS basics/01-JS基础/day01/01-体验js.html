@@ -34,21 +34,22 @@
      -->
 
     <!-- 点击切换按钮的案例-体验HTML+CSS+JS 实现交互效果 -->
-    <button class="pink">按钮</button>
-    <button>按钮</button>
-    <button>按钮</button>
-    <button>按钮</button>
+    <button class="pink">按钮1</button>
+    <button>按钮2</button>
+    <button>按钮3</button>
+    <button>按钮4</button>
 
     <script>
       //  通过dom获得所有的button元素 - querySelectorAll
-      let btns = document.querySelectorAll("button");
+      let btns = document.querySelectorAll('button')
       // 遍历每一个button元素,为它们添加监听的点击事件
       for (let index = 0; index < btns.length; index++) {
-        btns[index].addEventListener("click", function () {
-          document.querySelector(".pink").className = "";
+        btns[index].addEventListener('click', function () {
+          console.log(this)
+          document.querySelector('.pink').className = ''
           // this指的就是HTMLButtonElement
-          this.className = "pink";
-        });
+          this.className = 'pink'
+        })
       }
     </script>
   </body>

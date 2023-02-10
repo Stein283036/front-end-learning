@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>How to Use the "this" Keyword in JavaScript</title>
+  </head>
+  <body>
+    <button id="btn">按钮</button>
+  </body>
+
+  <script>
+    // 'use strict'; // 严格模式必须定义在开头才有效
+
+    // If we call this by itself, meaning not within a function,
+    // object, or whatever, it will refer to the global window object.
+    console.log(this)
+
+    // How to Call this in an Object Method
+    const person = {
+      firstName: 'John',
+      lastName: 'Doe',
+      id: 5566,
+      getThis: function () {
+        return this
+      },
+      getFullName: function () {
+        return this.firstName + ' ' + this.lastName
+      },
+    }
+    // 对象方法中的 this 指向对象本身
+    console.log('this in object method', person.getThis())
+    console.log(person.getFullName())
+
+    // How to Call this in a Function
+    function testThisInFunction() {
+      console.log('this in function', this)
+    }
+    // this in function Window {window: Window, self: Window, document: document, name: '', location: Location, …}
+    testThisInFunction() // 可以看到方法中的 this 指向的也是全局的 window 对象
+
+    // 关于箭头方法的注意
+    // In arrow functions, JavaScript sets the this lexically.
+    // This means that the arrow function doesn't create its own
+    // execution context but inherits the this from the outer function
+    // where the arrow function is defined.
+    // 即箭头函数中的 this 会指向外部对象中的 this
+    const show = () => this
+    console.log('this in arrow function', show())
+    // 因此如果使用箭头方法作为对象方法就要小心了 因为 箭头函数中的 this 不会指向对象本身
+    const person2 = {
+      name: 'Pedro',
+      surname: 'Sanchez',
+      sayName: () => {
+        console.log(this) // this 指向的是全局的 window 对象
+        return this.name + ' ' + this.surname // window 对象并没有 name 和 surname 因此会返回 undefined
+      },
+    }
+    console.log(person2.sayName()) // undefined
+
+    // 关于 strict-mode 的注意
+    // When using strict-mode, calling this within a function will return undefined.
+    //
+    // 'use strict';
+    function show2() {
+      console.log(this)
+    }
+    show2() // 见开头
+
+    // How to Use this in an Event Listener
+    document.getElementById('btn').addEventListener('click', function () {
+      console.log('this in event', this) // this 在事件中指向的是触发事件源的元素
+    })
+
+    // this Methods (call, apply and bind)
+    // javascript provides three native methods that can be used
+    // to manipulate the way the this keyword behaves. These methods
+    // are call, apply and bind.
+    // How to Use the Call Method
+    // With call we can invoke a method passing an owner object as an
+    // argument. Said in a simpler way, we can call a method
+    // indicating to which object the keyword this will refer to.
+    // 使用 call 方法时 我们可以传入一个已有的对象作为参数 让调用的方法中的 this 指向我们
+    // 传递的参数对象
+    const person3 = {
+      name: 'Pedro',
+      surname: 'Sanchez',
+      sayName: function () {
+        return this.name + ' ' + this.surname
+      },
+    }
+
+    const person4 = {
+      name: 'Jimena',
+      surname: 'Juarez',
+    }
+    console.log(person3.sayName.call(person4)) // Jimena Juarez
+    // 如果调用的方法接收参数的话 那我们也可以传递对象作为参数
+    const person5 = {
+      name: 'Pedro',
+      surname: 'Sanchez',
+      sayName: function (city, country) {
+        return this.name + ' ' + this.surname + ', ' + city + ', ' + country
+      },
+    }
+    const person6 = {
+      name: 'Jimena',
+      surname: 'Juarez',
+    }
+    console.log(person5.sayName.call(person6, 'DF', 'Mexico'))
+
+    // How to Use the Apply Method
+    // apply 方法 和 call 方法很像 唯一的区别就是 call 接收参数以列表的形式
+    // 分开 而 apply 接收参数以数组的方式
+    const person7 = {
+      name: 'Pedro',
+      surname: 'Sanchez',
+      sayName: function (city, country) {
+        return this.name + ' ' + this.surname + ', ' + city + ', ' + country
+      },
+    }
+    const person8 = {
+      name: 'Jimena',
+      surname: 'Juarez',
+    }
+    console.log(person7.sayName.apply(person8, ['DF', 'Mexico']))
+    // How to Use the Bind Method
+    // Same as call and apply , the bind method indicates the object to which
+    // the this keyword will refer when a given method executes.
+    // 但是区别是 bind 总是会返回一个新的函数而不是执行它 虽然使用 call 和 apply
+    // 的时候可以立即执行 但是使用 bind 我们必须分开执行
+    // 值的一提的是 bind 接收参数也是以数组的形式 同 apply
+    const person9 = {
+      name: 'Pedro',
+      surname: 'Sanchez',
+      sayName: function () {
+        return this.name + ' ' + this.surname
+      },
+    }
+
+    const person10 = {
+      name: 'Jimena10',
+      surname: 'Juarez10',
+    }
+    const sayPerson10Name = person9.sayName.bind(person10)
+    console.log(sayPerson10Name())
+  </script>
+</html>
