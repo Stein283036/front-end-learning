@@ -45,6 +45,7 @@
         男子网球世界排名
       </caption>
       <tr>
+        <!-- 表头 -->
         <th>积分</th>
         <th>姓名</th>
         <th>排名</th>
@@ -89,6 +90,7 @@
       <p>
         用户名:
         <!-- placeholder属性用来设置文本框的占位符(提示信息) -->
+        <!-- name 属性用来设置传送给服务器的表单项名称 -->
         <input type="text" name="username" placeholder="用户名" id="" />
       </p>
       <p>
@@ -99,36 +101,48 @@
         性别:
         <!-- 单选框的name属性值必须相同 -->
         <!-- 常用属性: checked,默认选中 -->
-        <input type="radio" name="gender" id="" checked />男
-        <input type="radio" name="gender" id="" />女
+        <input type="radio" name="gender" value="male" id="" checked />男
+        <input type="radio" name="gender" value="female" id="" />女
       </p>
       <p>
         爱好:
         <!-- 复选框的name属性值必须相同,服务端接受到的是一个hobbies数组 -->
         <!-- 常用属性: checked -->
-        <input type="checkbox" name="hobbies" id="" />网球
-        <input type="checkbox" name="hobbies" id="" />CS-GO
-        <input type="checkbox" name="hobbies" id="" />足球
-        <input type="checkbox" name="hobbies" id="" checked />编程
+        <input type="checkbox" name="hobbies" value="tennis" id="" />网球
+        <input type="checkbox" name="hobbies" value="CS-GO" id="" />CS-GO
+        <input
+          type="checkbox"
+          name="hobbies"
+          value="football"
+          id=""
+          checked
+        />足球
+        <input
+          type="checkbox"
+          name="hobbies"
+          value="programming"
+          id=""
+          checked
+        />编程
       </p>
       <p>
         上传头像:
-        <!-- 文件上传表单必须添加enctype="multipart/form-data" -->
-        <!-- multiple属性:多文件选择 -->
+        <!-- 文件上传表单必须添加 enctype="multipart/form-data" -->
+        <!-- multiple 属性:多文件选择 -->
         <input type="file" name="photos" id="" multiple />
       </p>
 
-      <!-- button按钮标签 -->
+      <!-- button 按钮标签 -->
       <p>
         <input type="submit" value="提交" />
         <input type="reset" value="重置" />
         <input type="button" value="普通按钮" />
       </p>
 
-      <!-- select下拉菜单标签 -->
+      <!-- select 下拉菜单标签 -->
       <p>
         <select name="address" id="">
-          <!-- selected属性: 默认选中某一个下拉列表 -->
+          <!-- selected 属性: 默认选中某一个下拉列表 -->
           <option value="beijing">北京</option>
           <option value="shanghai">上海</option>
           <option value="wuhu">芜湖</option>
@@ -136,16 +150,17 @@
         </select>
       </p>
 
-      <!-- textarea文本域标签 -->
-      <!-- cols：规定了文本域内可见宽度 -->
+      <!-- textarea 文本域标签 -->
+      <!-- cols：规定了文本域内可见列数 -->
       <!-- rows：规定了文本域内可见行数 -->
-      <!-- 实际开发时针对于样式效果推荐用CSS设置 -->
+      <!-- 布局样式与网页结构内容分离 -->
+      <!-- 实际开发时针对于样式效果推荐用 CSS 设置 -->
       个人简介:
       <p>
         <textarea name="introduction" id="" cols="30" rows="10"></textarea>
       </p>
 
-      <!-- lable标签 -->
+      <!-- lable 标签 -->
       <p>
         <label for="girlfriend">
           女朋友:
@@ -155,9 +170,9 @@
     </form>
 
     <!-- 语义化标签
-        场景：实际开发网页时会大量频繁的使用到div和span这两个没语义的布局标签
-        div标签：一行只显示一个（独占一行）
-        span标签：一行可以显示多个
+        场景：实际开发网页时会大量频繁的使用到 div 和 span 这两个没语义的布局标签
+        div 标签：块级标签，一行只显示一个（独占一行）
+        span 标签：行内标签，一行可以显示多个
     -->
 
     <!-- 字符实体
@@ -167,10 +182,6 @@
         >大于的字符实体: &gt;
         <大于的字符实体: &lt;
     -->
-    <p>
-        我爱&nbsp;&nbsp;&nbsp;何晶雯
-        10&gt;9
-        9&lt;10
-    </p>
+    <p>我爱&nbsp;&nbsp;&nbsp;何晶雯 10&gt;9 9&lt;10</p>
   </body>
 </html>
