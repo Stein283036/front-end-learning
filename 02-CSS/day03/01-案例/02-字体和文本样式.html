@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>字体和文本样式</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
       p {
         /* font-size: 20px;
         font-weight: bold;
@@ -13,9 +18,10 @@
         font-family: 微软雅黑, 黑体, sans-serif; */
         /* 如果用户电脑没有安装微软雅黑, 就按黑体显示文字 */
         /* 如果电脑没有安装黑体, 就按任意一种非衬线字体系列显示 */
-        font: italic bold 20px 微软雅黑;
+        font: italic bold 20px/2 微软雅黑;
 
         text-indent: 2em;
+        text-shadow: 5px 5px 1px #ddd;
       }
 
       .one {
@@ -45,13 +51,13 @@
   <body>
     <!-- 字体样式
         字体大小：font-size
-        谷歌浏览器默认文字大小是16px
+        谷歌浏览器默认文字大小是 16 px
         字体粗细: font-weight: normal bold
         实际开发中以：正常、加粗两种取值使用最多
         字体类型: font-family
-        字体样式: font-style: normal italic
+        字体样式: font-style: normal italic 斜体
 
-        字体font相关属性的连写
+        字体 font 相关属性的连写
         省略要求:只能省略前两个，如果省略了相当于设置了默认值
         font : style weight size family;
     -->
@@ -61,11 +67,11 @@
     <!-- 文本样式
         文本缩进：text-indent
         取值:
-        数字+px
-        数字+em（推荐：1em = 当前标签的font-size的大小）
+        数字 + px
+        数字 + em（推荐：1 em = 当前标签的 font-size 的大小）
 
         文本水平对齐方式：text-align
-        如果需要让文本水平居中，text-align属性给文本所在标签（文本的父元素）设置
+        如果需要让文本水平居中，text-align 属性给文本所在标签（文本的父元素）设置
         text-align : center 能让哪些元素(行内元素)水平居中？
         ①文本
         ②span和a标签
@@ -81,7 +87,7 @@
         line-through:删除线(不常用)
         overline:上划线(几乎不用)
         none:无装饰线(常用)
-        开发中会使用 text-decoration : none ; 清除a标签默认的下划线
+        开发中会使用 text-decoration : none ; 清除 a 标签默认的下划线
      -->
 
     <p class="one">
@@ -91,13 +97,13 @@
     <!-- 行高
         作用：控制一行的上下行间距
         取值：
-        • 数字+px
+        • 数字 + px
         • 倍数（当前标签font-size的倍数）
         应用：
         1. 让单行文本垂直居中可以设置 line-height : 文字父元素高度
         2. 网页精准布局时，会设置 line-height : 1 可以取消上下间距
         行高与font连写的注意点：
-        • 如果同时设置了行高和font连写，注意覆盖问题
+        • 如果同时设置了行高和 font 连写，注意覆盖问题
         • font : style weight size/line-height family ;
      -->
     <div>世界</div>
@@ -120,7 +126,7 @@
         • 如果三组中，每组数字都相同，此时可以每组可以省略只写一个数字
         • 正确写法：#ffaabb 改写成 #fab
         实际开发中会直接使用测量工具直接得到颜色，不需要前端自己设计颜色，直接复制粘贴即可,通常
-        使用rgba和十六进制表示法来表示颜色
+        使用 rgba 和十六进制表示法来表示颜色
      -->
     <p class="colorStyle">颜色常见取值</p>
   </body>
