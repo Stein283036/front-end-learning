@@ -1,0 +1,47 @@
+span {
+  color: yellow;
+}
+
+/* 并集选择器 */
+strong,
+em {
+  color: rebeccapurple;
+}
+
+p {
+  width: 400px;
+  line-height: 30px;
+}
+
+/* 类选择器 */
+.my-class {
+  font-weight: bold;
+  font-size: 30px;
+}
+
+/* id 选择器 */
+#my-id {
+  color: rgb(175, 121, 83);
+}
+
+/* 标签属性选择器 */
+p[mark] {
+  color: royalblue;
+}
+
+/* 结合属性值 */
+p[mark='my-mark'] {
+  color: goldenrod;
+}
+
+p > a:hover {
+  text-decoration: none;
+  color: orangered;
+}
+
+/* 伪元素选择器 */
+/* ::first-line是会选择一个元素（下面的情况中是<p>）中的第一行 */
+p::first-line {
+  font-style: italic;
+  color: rgb(55, 106, 216);
+}

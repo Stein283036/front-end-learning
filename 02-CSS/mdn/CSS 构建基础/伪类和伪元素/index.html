@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 不使用伪类选择器，如果用类名选择的段落上面增加了其它段，维护起来就麻烦了 */
+      .first {
+        font-weight: bold;
+        /* font-size: 120%; */
+        font-size: 1.2rem;
+      }
+
+      article:first-of-type(p) {
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      article > p:first-child {
+        font-weight: bold;
+        font-size: 1.2em;
+        color: gray;
+      }
+
+      article a:link,
+      article a:visited {
+        color: rebeccapurple;
+        font-weight: bold;
+      }
+
+      article a:hover {
+        text-decoration: none;
+      }
+
+      article {
+        width: 800px;
+      }
+
+      article p::first-line {
+        color: royalblue;
+      }
+
+      /* 把伪类和伪元素组合起来 */
+      /* 选中article第一段的第一行 */
+      article p:first-child::first-line {
+        color: yellowgreen;
+        font-size: 40px;
+      }
+
+      .box::before {
+        content: '在 box 盒子内容之前插入新的内容';
+      }
+
+      .box::after {
+        content: '➥';
+      }
+
+      .box2::before {
+        content: '';
+        display: block;
+        width: 100px;
+        height: 100px;
+        background-color: plum;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 伪类选择器 -->
+    <article>
+      <p class="first">
+        Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+        onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+      </p>
+
+      <p>
+        Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+        courgette tatsoi pea sprouts fava bean collard greens dandelion okra
+        wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+      </p>
+
+      <p><a href="">Hover over me</a></p>
+    </article>
+
+    <!-- 伪元素 -->
+    <article>
+      <p>
+        Veggies es bonus vobis, proinde vos postulo essum magis kohlrabi welsh
+        onion daikon amaranth tatsoi tomatillo melon azuki bean garlic.
+      </p>
+
+      <p>
+        Gumbo beet greens corn soko endive gumbo gourd. Parsley shallot
+        courgette tatsoi pea sprouts fava bean collard greens dandelion okra
+        wakame tomato. Dandelion cucumber earthnut pea peanut soko zucchini.
+      </p>
+
+      <!-- 生成带有::before 和::after 的内容 -->
+      <p class="box">Content in the box in my HTML page.</p>
+
+      <p class="box2">Content in the box in my HTML page.</p>
+    </article>
+  </body>
+</html>

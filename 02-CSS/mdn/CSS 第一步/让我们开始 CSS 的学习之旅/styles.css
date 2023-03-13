@@ -1,0 +1,61 @@
+/* 标签选择器 */
+h1 {
+  color: red;
+}
+
+/* 并集选择器 */
+h1,
+li {
+  color: blue;
+}
+
+/* 浏览器会为所有的网页元素设置默认的样式，以此来增加网页的可读性 */
+ul li {
+  list-style-type: '\1F44D';
+  list-style-type: square;
+}
+
+/* 类选择器 */
+.special {
+  color: orange;
+  font-weight: bold;
+}
+
+/* 交集选择器，同时满足两个以上的元素匹配规则 */
+li.special {
+  color: coral;
+  font-style: italic;
+}
+
+/* 后代选择器 */
+li em {
+  color: rebeccapurple;
+}
+
+/* 兄弟选择器 */
+h1 + p {
+  font-size: 200%;
+  color: red;
+}
+
+/* 伪类选择器 */
+/* 未访问过的链接状态 */
+a:link {
+  color: pink;
+}
+/* 已访问过的链接状态 */
+a:visited {
+  color: green;
+}
+/* 光标悬殊时的链接状态 */
+a:hover {
+  text-decoration: none;
+  font-size: 200%;
+}
+
+/* 稍微复杂点的组合选择器 */
+body h1 + p .special {
+  color: yellow;
+  background-color: black;
+  padding: 5px;
+}

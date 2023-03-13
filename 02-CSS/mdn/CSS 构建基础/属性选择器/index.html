@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 除了第一项以外都选中了 */
+      li[class] {
+        color: green;
+      }
+
+      /* 选中了第二项 */
+      li[class='a'] {
+        color: rgb(93, 238, 9);
+      }
+
+      /* 选中了第二和第三项 */
+      li[class~='a'] {
+        color: royalblue;
+      }
+
+      /* 属性值以 "a" 开头 */
+      li[class^='a'] {
+        font-size: 10px;
+      }
+
+      /* 属性值包含 "a" */
+      li[class*='a'] {
+        font-size: 30px;
+      }
+
+      /* 属性值以 "a" 结尾 */
+      li[class$='a'] {
+        font-size: 20px;
+      }
+
+      li[class^='a'] {
+        background-color: coral;
+      }
+
+      li[class^='a' i] {
+        color: red;
+        font-size: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Attribute presence and value selectors</h1>
+    <ul>
+      <li>Item 1</li>
+      <li class="a">Item 2</li>
+      <li class="a b">Item 3</li>
+      <li class="ab">Item 4</li>
+    </ul>
+
+    <h1>Attribute substring matching selectors</h1>
+    <ul>
+      <li class="a">Item 1</li>
+      <li class="ab">Item 2</li>
+      <li class="bca">Item 3</li>
+      <li class="bcabc">Item 4</li>
+    </ul>
+
+    <h1>Case-insensitivity</h1>
+    <ul>
+      <li class="a">Item 1</li>
+      <li class="A">Item 2</li>
+      <li class="Ab">Item 3</li>
+    </ul>
+  </body>
+</html>
