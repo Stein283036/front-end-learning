@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        border: 3px solid darkblue;
+        width: 300px;
+        height: 80px;
+      }
+
+      .inner {
+        width: 40%; /* width = 40% * 300px = 120px */
+        height: 80%; /* height = 80% * 80px = 64px */
+        background-color: yellowgreen;
+      }
+
+      .box2 {
+        border: 3px solid darkblue;
+        min-height: 150px;
+        width: 300px;
+        /* height: 80px; */
+        margin: 10%;
+        padding: 10%;
+      }
+
+      .box3 {
+        width: 200px;
+        min-height: 150px; /* 当高度无法承载内容时，会自动增加盒子的高度 */
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <img
+      src="../../assets/Today you will be a better person than yesterday, the world will be on your side..jpg"
+      alt=""
+    />
+    <div class="box">
+      <div class="inner">我是子盒子</div>
+    </div>
+
+    <div class="box2">I have margin and padding set to 10% on all sides.</div>
+
+    <div class="box3">
+      最小高度为 150 px最小高度为 150 px最小高度为 150 px最小高度为 150
+      px最小高度为 150 px最小高度为 150 px最小高度为 150 px最小高度为 150
+      px最小高度为 150 px最小高度为 150 px最小高度为 150 px最小高度为 150
+      px最小高度为 150 px最小高度为 150 px最小高度为 150 px最小高度为 150
+      px最小高度为 150 px最小高度为 150 px最小高度为 150 px最小高度为 150
+      px最小高度为 150 px最小高度为 150 px最小高度为 150 px最小高度为 150 px
+    </div>
+  </body>
+</html>
